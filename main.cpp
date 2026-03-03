@@ -4,7 +4,9 @@
 #include <locale>
 
 int main() {
-    std::wcout.imbue(std::locale(""));
+    // setlocale(LC_ALL, "Russian");
+    std::locale::global(std::locale(""));
+    // std::wcout.imbue(std::locale(""));
     // 1. Открываем файл
     std::wifstream file("./file.txt");
     std::wofstream outFile("./output.txt");
